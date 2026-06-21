@@ -9,7 +9,7 @@ const App = () => {
   const [age, setAge] = useState("")
 
   function userFetch() {
-    axios.get('http://localhost:3000/api/users')
+    axios.get('https://fullstack-trial.onrender.com/api/users')
    .then(res => {
     setUser(res.data.userFetched);
    })
@@ -26,7 +26,7 @@ const App = () => {
 
     e.preventDefault();
 
-    axios.post('http://localhost:3000/api/users', {
+    axios.post('https://fullstack-trial.onrender.com/api/users', {
     name: name,
     age: age
   }) 
@@ -43,7 +43,7 @@ const App = () => {
 }
 
 function delFun(id) {
-  axios.delete('http://localhost:3000/api/users/'+id)
+  axios.delete('https://fullstack-trial.onrender.com/api/users/'+id)
   .then(()=>{
     userFetch();
   })
